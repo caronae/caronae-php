@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Build image
-          command: docker build -t caronae/php:latest php
+          command: docker build -t caronae/php:latest .
       - run:
           name: Publish image
           command: |
