@@ -11,9 +11,9 @@ RUN set -ex && apk --no-cache add \
     libxml2-dev \
     curl-dev
 
-RUN apk --no-cache add postgresql-dev postgresql=9.6.8-r0 --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/main/
+RUN apk --no-cache add libpng-dev postgresql-dev postgresql=9.6.8-r0 --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/main/
 
-RUN docker-php-ext-install pdo pdo_pgsql pgsql zip xml curl mbstring
+RUN docker-php-ext-install pdo pdo_pgsql pgsql zip xml curl mbstring gd
 
 COPY docker.conf /usr/local/etc/php-fpm.d/
 COPY php.logs.ini /usr/local/etc/php/conf.d/logs.ini
