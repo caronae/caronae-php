@@ -10,7 +10,7 @@ jobs:
           name: Build image
           command: ./build.sh
           environment:
-            DOCKER_PUSH: true
+            DOCKER_PUSH: 'true'
 
 workflows:
   version: 2

@@ -1,6 +1,6 @@
 #!/bin/sh
 set -e
-echo "$DOCKER_PUSH"
+echo "DOCKER_PUSH=$DOCKER_PUSH"
 
 docker build -t caronae/php:latest .
 
