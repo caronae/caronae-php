@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Build image
-          command: $CIRCLE_WORKING_DIRECTORY/script.sh
+          command: ./build.sh
           environment:
             DOCKER_PUSH: true
 
