@@ -1,10 +1,12 @@
 #!/bin/sh
-set -e
-echo "DOCKER_PUSH=$DOCKER_PUSH"
+set -euo pipefail
+
+docker_push=${DOCKER_PUSH:-}
+echo "DOCKER_PUSH=$docker_push"
 
 docker build -t caronae/php:latest .
 
-if [ "$DOCKER_PUSH" == 'true' ]; then
+if [ "$docker_push" == true ]; then
   docker login -u $DOCKER_USER -p $DOCKER_PASS
   docker push caronae/php
 fi
