@@ -13,7 +13,7 @@ RUN set -ex && apk --no-cache add \
 RUN apk --no-cache add libpng-dev postgresql-dev postgresql \
     --repository http://dl-cdn.alpinelinux.org/alpine/v3.6/main/
 
-RUN docker-php-ext-install pdo pdo_pgsql pgsql zip xml curl mbstring gd
+RUN docker-php-ext-install pdo pdo_pgsql pgsql zip xml curl mbstring gd bcmath
 
 COPY docker.conf /usr/local/etc/php-fpm.d/
 COPY php.logs.ini /usr/local/etc/php/conf.d/logs.ini
