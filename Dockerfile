@@ -18,4 +18,5 @@ RUN docker-php-ext-install pdo pdo_pgsql pgsql zip xml curl mbstring gd
 COPY docker.conf /usr/local/etc/php-fpm.d/
 COPY php.logs.ini /usr/local/etc/php/conf.d/logs.ini
 
+ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
